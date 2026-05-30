@@ -1,0 +1,154 @@
+/* Toàn bộ trang web với màu nền xám pastel */
+body {
+    background-color: #ecedf3;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Kiểu dáng cho liên kết Skip to Main Content (Ẩn mặc định, hiện khi nhấn Tab) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background-color: #6c6cf6;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 999;
+}
+.skip-link:focus {
+    top: 10px; /* Xuất hiện ở đầu trang khi nhấn Tab */
+}
+
+/* Khối biểu ngữ chứa thanh menu */
+.header-banner {
+    padding: 20px;
+    background-color: #b4d4f5; /* Đồng bộ màu nền xanh lam pastel nhạt */
+}
+
+/* BƯỚC 3: Thay đổi phần tử nav để sử dụng thuộc tính inline-block và có chiều rộng khoảng 80% */
+nav {
+    display: inline-block;
+    width: 80%;
+    list-style-type: none; /* Thêm thuộc tính list-style-type chung theo mục tiêu */
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* BƯỚC 2: Vô hiệu hóa phần định kiểu hiện có cho phần tử li bằng cách thêm dấu chú thích (Comment) */
+/* nav ul li {
+    display: inline-block; 
+    margin: 0 20px;
+} 
+*/
+
+/* Định kiểu mới cho các mục menu sau khi vô hiệu hóa cái cũ */
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: #6c6cf6;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* BƯỚC 4: Sử dụng bộ chọn con cháu chỉ định kiểu cho hình ảnh trong thanh điều hướng rộng khoảng 10% */
+nav img {
+    width: 10%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; 
+    top: 20px; /* Di chuyển vị trí xuống dưới theo ảnh chụp màn hình mẫu */
+    border-radius: 4px;
+}
+
+/* Tiêu đề chính */
+.main-heading {
+    font-family: 'Great Vibes', cursive;
+    color: #00008B;
+    text-align: center;
+    font-size: 55px;
+    margin: 60px 0 20px 0;
+    line-height: 1.2;
+}
+
+/* Khối hộp chữ nhật màu xám xanh pastel chứa thư viện ảnh bên dưới */
+.gallery-container {
+    background-color: #d1dbec;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 6px;
+}
+
+h2 {
+    color: #00008B;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* BƯỚC 5 & 7: Định kiểu lớp lưới (.grid) sử dụng lưới hai cột (mỗi cột khoảng 40%) kết hợp justify-content, align-items, row-gap */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 40%); /* Tạo lưới chính xác 2 cột, mỗi cột 40% */
+    justify-content: center;               /* Căn giữa toàn bộ hệ thống lưới ảnh */
+    align-items: center;                   /* Căn chỉnh các phần tử theo trục dọc */
+    row-gap: 25px;                         /* Khoảng cách giữa các hàng hình ảnh */
+    column-gap: 10px;
+}
+
+/* BƯỚC 6: Sử dụng bộ chọn con cháu chỉ định kiểu cho các hình ảnh ĐỘC QUYỀN trong lớp lưới rộng 100% */
+.grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #8cb0ea;
+    border-radius: 4px;
+}
+
+/* Đường gạch ngang phân chia hai khu vực phòng trưng bày ảnh */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #8cb0ea;
+    margin: 40px 0;
+}
+
+/* BƯỚC 8: Tùy chỉnh kiểu dáng của lớp .flex sử dụng thuộc tính flex, flex-wrap và justify-content */
+.flex {
+    display: flex;
+    flex-wrap: wrap;                 /* Cho phép ảnh tự động xuống hàng khi màn hình hẹp */
+    justify-content: space-around;   /* Trải đều khoảng cách xung quanh các hình ảnh */
+    gap: 15px;
+}
+
+/* Định kiểu hình ảnh trong lớp flex (đảm bảo không bị ảnh hưởng bởi quy tắc width 100% của lớp lưới) */
+.flex img {
+    width: calc(33.33% - 20px);      /* Xếp vừa vặn 3 ảnh trên một hàng ngang */
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #8cb0ea;
+    border-radius: 4px;
+}
+
+/* Phần chữ chân trang footer */
+footer {
+    padding: 20px;
+    background-color: #D3D3D3;
+    text-align: center;
+}
+
+footer p {
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+}
